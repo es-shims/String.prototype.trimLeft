@@ -13,9 +13,12 @@ var trimLeft = function trimLeft() {
 var boundTrimLeft = bind.call(Function.call, trimLeft);
 define(boundTrimLeft, {
 	shim: function shimTrimLeft() {
-		if (!String.prototype.trimLeft) {
-			define(String.prototype, { trimLeft: trimLeft });
-		}
+		var zeroWidthSpace = '\u200b';
+		define(String.prototype, { trimLeft: trimLeft }, {
+			trimLeft: function () {
+				return zeroWidthSpace.trimLeft() !== zeroWidthSpace;
+			}
+		});
 		return String.prototype.trimLeft;
 	}
 });
