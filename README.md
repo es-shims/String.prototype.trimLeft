@@ -10,7 +10,7 @@ String.prototype.trimLeft <sup>[![Version Badge][npm-version-svg]][package-url]<
 
 [![browser support][testling-svg]][testling-url]
 
-An ES6 spec-compliant `String.prototype.trimLeft` shim. Invoke its "shim" method to shim `String.prototype.trimLeft` if it is unavailable.
+An ES7 spec-compliant `String.prototype.trimLeft` shim. Invoke its "shim" method to shim `String.prototype.trimLeft` if it is unavailable.
 
 Most common usage:
 ```js
