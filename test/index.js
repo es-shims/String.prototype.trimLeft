@@ -3,6 +3,8 @@
 var trimLeft = require('../');
 var test = require('tape');
 
+var runTests = require('./tests');
+
 test('as a function', function (t) {
 	t.test('bad array/this value', function (st) {
 		st.throws(function () { trimLeft(undefined, 'a'); }, TypeError, 'undefined is not an object');
@@ -10,7 +12,7 @@ test('as a function', function (t) {
 		st.end();
 	});
 
-	require('./tests')(trimLeft, t);
+	runTests(trimLeft, t);
 
 	t.end();
 });
